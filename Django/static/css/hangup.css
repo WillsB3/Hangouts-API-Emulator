@@ -1,0 +1,468 @@
+/* Hangup.css - Styles to Emulate a Google Hangout Chrome */
+html {
+	height: 100%;
+}
+
+body {
+	background: white;
+	color: #222;
+	font: normal 13px arial,sans-serif;
+	height: 100%;
+	line-height: 18px;
+	margin: 0;
+	min-height: 788px;
+	overflow: visible;
+	position: relative;
+	width: 100%;
+}
+
+header {
+	display: block;
+	height: 30px;
+	overflow: hidden;
+	line-height: 30px;
+	padding: 6px;
+}
+
+header .logo {
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHYAAAAeCAQAAABTCSKtAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAJdnBBZwAAAHYAAAAeABzobAoAAAPwSURBVFjD1ZjtkaJMFIUfpyaBTqEnhJ4QmAj2YggYAoYAIUgIcjOAEOwQJIUOYfYH4CCKoK+7vnuqrKKwgXvu5+le/TJkJCxFw1bLxav/Z3i7iypY9q82+XGsfn0Dnpxaw6uN+Ttkv/BUuMVP1az/Rde8AdxJFaJ/M5nfATTIPVRburOQ+OTAgNf6mWaLISHF4PlanmPvzzRhYEpKQqAmAJYYJFCSa/OcL2ggl4jovk7zB8iKowJyzQfkd8QkWL6e/72HyepqgsB3d1HMDSpxVBg+1Q/eGljLHsv6lVT7BrUUhW5mqBr2GPIh1Q53VdefwT1p7NnOromxQH75h47uSdQ1ufq8dYklxgAN5blzxAwnxrjhnZ4rpvvC8sgui0wC801DnBzZdesrqfpZIEYyjhjAseMop5KRWA4c2FNRsSPFnLtBMg4YIOUo2ehr330RLo3s0iR0gL+9RBwHSl0DSE5FRCUfGsRQYftql4yUnaAFSErGRgsx7IkwbEbR2+P4Ug9SU5GKv67fl0bWYBeunMce+oLQwBYwZECKo+irXbc0QCZGLBmNFm2jAwzpmfMSIsruOQuEKVuXkrVUEi9ce1OgSIyFn8hojQfi7jdEDhhiYiCcnFN2lH4QAUGMpHIkYcNH3x/ku0/h9mp5zRr2ki5aeVtdXbqiBozYi3jUnZsN4KSv0sv209b4HstaP7WYLrf7REUmc8lcE4EkWvzckoj05IDe5+5iOIWT4R20kfaiJAXSLvUNcFmRRj8vjWlVg3z3V++E4QdO4mEKc3vfkghI5Xxs5ORkONBtVwzxqI01GqTBXskKr14KElKBGkdCPnQl4IlwEs2r77cFs/MOaIEHbDdY2nu11lqfqq6kAWL5cXEfqxKwg3HjgEZL0A0bShwVGbmOLW6p78QwgzctpiTig9gQgFgOkym/ASzZiVKC1y2Q44Gsnbpi2BF6gamFrq9JFQBtyAHLoXWUuPNJq6ue4arNW6mWbNoGqHVS0otjhwMCRa+PpG0gfRVF7LA0lBgScvI26aU/DysIxDRszytbjlg60dpp8EDNRoNkg3HkWV9XUT3Zdlwvpjp3UiEJ8dn7PJ6G+sd4cTgsNX4kCi0Oh6cZrI2IibDUtD27kySj56Luv0lRs7rekSQZVh1cqZQFEIeBMZ2735KRUrdR7jaLsBk1qUVYTbXfs8QOfLxqxyIJOxr9GNzZEz/m/GlRMWwH2xduzixjIfFATGfIan16qX8kZZ4Kd3ZGFj1K+JZczLvZ+NRJfDcKAoZKUnHdWEkvdj0LsbolmSQjvdb5/i7EknYbc/hPx3a3yRoOfD3rRPD1WN0Ww2JefW70TPwGW+uXRND9YAMAAAAWdEVYdENyZWF0aW9uIFRpbWUAMDIvMTMvMTJRgiB6AAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M1cbXjNgAAAABJRU5ErkJggg==);
+	display: block;
+	float: left;
+	height: 30px;
+	margin-left: 11px;
+	margin-right: 5px;
+	overflow: hidden;
+	width: 118px;
+}
+
+header .developer-label {
+	background-color: #900;
+	display: inline-block;
+	color: white;
+	float: left;
+	font-weight: bold;
+	line-height: 18px;
+	margin: 3px 5px 0 12px;
+	padding: 3px 5px;
+}
+
+.hangout-wrapper {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	height: 100%;
+	min-height: 500px;
+	padding-bottom: 160px;
+	overflow: hidden;
+}
+
+/***************************************
+** App state dependant styles
+***************************************/
+body.app-visible .main-video-feed {
+	display: none;
+}
+
+body.app-running.app-visible .app-outer-wrapper {
+	display: block;
+}
+
+body.app-running.app-visible .developer-toolbar {
+	display: block;
+}
+
+body .app-outer-wrapper {
+	display: none;
+}
+
+body .developer-toolbar {
+	display: none;
+}
+
+/***************************************
+** Hangout UI Chrome
+***************************************/
+.hangout-chrome {
+	height: 128px;
+	position: relative;
+	width: 100%;
+	z-index: 4;
+}
+
+#hangout-message-wrapper {
+	height: 35px;
+	left: 0;
+	position: absolute;
+	text-align: center;
+	top: 7px;
+	width: 100%;
+	z-index: 10000;
+}
+
+#hangout-message {
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+
+	-moz-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+	-moz-transition: all 0 linear 1s,opacity 1s;
+	-ms-transition: all 0 linear 1s,opacity 1s;
+	-o-transition: all 0 linear 1s,opacity 1s;
+	-webkit-transition: all 0 linear 1s,opacity 1s;
+	transition: all 0 linear 1s,opacity 1s;
+
+	background-color: #F9EDBE;
+	border: 1px solid #F0C36D;
+	color: #333;
+	display: inline-block;
+	font-size: 11px;
+	height: 14px;
+	margin: 0 auto;
+	opacity: 1;
+	overflow: hidden;
+	padding: 6px 16px;
+	text-align: center;
+	text-overflow: ellipsis;
+	visibility: visible;
+	white-space: nowrap;
+}
+
+#hangout-message.hidden {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.button {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	background-color: inherit;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	color: #444;
+	cursor: default;
+	display: inline-block;
+	border: 1px solid gainsboro;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border: 1px solid transparent;
+	font-size: 11px;
+	font-weight: bold;
+	height: 27px;
+	line-height: 27px;
+	margin: 0 4px;
+	min-width: 0;
+	outline: 0;
+	overflow: hidden;
+	padding: 0 8px;
+	text-align: center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.button.button-with-icon {
+	padding-left: 0;
+}
+
+.button-hangout-app {
+	max-width: 120px;
+}
+
+.button:hover {
+	background-color: #F8F8F8;
+	background-image: -webkit-linear-gradient(top, #F8F8F8, #F1F1F1);
+	background-image: -moz-linear-gradient(top, #F8F8F8, #F1F1F1);
+	background-image: -ms-linear-gradient(top, #F8F8F8, #F1F1F1);
+	background-image: -o-linear-gradient(top, #F8F8F8, #F1F1F1);
+	background-image: linear-gradient(top, #F8F8F8, #F1F1F1);
+	border: 1px solid #C6C6C6;
+
+	-moz-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+}
+
+.button.is-selected {
+	background-color: #EEE;
+	border: 1px solid #CCC;
+	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+	background-image: -webkit-linear-gradient(top, #EEE, #E0E0E0);
+	background-image: -moz-linear-gradient(top, #EEE, #E0E0E0);
+	background-image: -ms-linear-gradient(top, #EEE, #E0E0E0);
+	background-image: -o-linear-gradient(top, #EEE, #E0E0E0);
+	background-image: linear-gradient(top, #EEE,#E0E0E0);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+
+.divider {
+	border-right: 1px solid #D9D9D9;
+	display: inline-block;
+	height: 20px;
+	margin: 0 4px;
+	vertical-align: middle;
+}
+
+.hangout-toolbar {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	display: block;
+	background: whiteSmoke;
+	border-top: 1px solid #E5E5E5;
+	border-bottom: 1px solid #E5E5E5;
+	height: 41px;
+	padding: 5px 0 0 4px;
+	width: 100%;
+}
+
+.hangout-toolbar .button {
+	margin: 0;
+}
+
+.developer-toolbar {
+	height: 45px;
+	width: 100%;
+}
+
+.developer-toolbar .button {
+	background-image: -webkit-linear-gradient(top, whiteSmoke, #F1F1F1);
+	background-image: -moz-linear-gradient(top, whiteSmoke, #F1F1F1);
+	background-image: -ms-linear-gradient(top, whiteSmoke, #F1F1F1);
+	background-image: -o-linear-gradient(top, whiteSmoke, #F1F1F1);
+	background-image: linear-gradient(top, whiteSmoke, #F1F1F1);
+	border: 1px solid gainsboro;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	margin: 8px;
+}
+
+.developer-toolbar .button:active {
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+.developer-toolbar .button.button-with-icon {
+	padding-left: 30px;
+	position: relative;
+}
+
+.developer-toolbar .button .button-icon {
+	background-repeat: no-repeat;
+	height: 16px;
+	left: 8px;
+	position: absolute;
+	top: 5px;
+	width: 16px;
+}
+
+.developer-toolbar .label {
+	margin-left: 11px;
+}
+
+.developer-toolbar .button.button-reload .button-icon {
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAJdnBBZwAAABAAAAAQAFzGrcMAAAEnSURBVCjPbdE9SNtRFMbhJzchgpQK1UEEJdhFLHTp4iTOTikIYgaxg3eQgjp06FYKLoWCLoIXl4IOUhwKdXFzcsqmYIdCQAr1A7SCg0pJh+SvsXq2c97f+eC8efci1l7VqgetlVyLWFTyA9/Mpdo9IBaM+uiFIIA/PqTFBtAofLLppeCq2dZhJJsQYjEumRVUDaX2Zv/rVM6AgmEzWPc2XYAd5XR+d1nBvGAvTTbz+Wx3LBpwnQ4KhtR9zvhMRrddvz0PnmLbw6hr00fwF88eATrl3BAcyak8AkzjmOC7ukrs+e/lA8awQbDsVMlm7G2R+63r8ssKOeI7C/JObFmzb9C4MV0uvUlfG0DRhAXdt+7UceZ9Wm1xM/aZUtbviWs/bfiSDhvKPyzNSVHOcxNAAAAAAElFTkSuQmCC');
+}
+
+.developer-toolbar .button.button-reset .button-icon {
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAJdnBBZwAAABAAAAAQAFzGrcMAAABOSURBVCjPY/zPgB8wMVCqAA7SFuA1IW0BQzweBbilGRiY8EszMDDilybCF4wIK2YxYvjsPwMDEwPDrASGRgJWzGpgSCQcUAE43ED7yAIA48oPwg82AgwAAAAASUVORK5CYII=');
+}
+
+.hangout-toolbar .app-icon {
+	display: block;
+	float: left;
+}
+
+.app-icon.app-icon-16 {
+	height: 16px;
+	padding: 5px;
+	width: 16px;
+}
+
+.main-content-area {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 3px;
+	right: 3px;
+	padding: 128px 0px 160px 0px;
+	z-index: 3;
+}
+
+.hangout-toolbar .button {
+	margin: 0;
+}
+
+/***************************************
+** Hangout content
+***************************************/
+
+.main-video-feed {
+	display: table;
+	min-height: 200px;
+	text-align: center;
+}
+
+.main-video-feed .empty-hangout-content {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.empty-hangout-content .empty-hangout-animation {
+	background: transparent url('https://ssl.gstatic.com/chat/hangouts/hangouts_oldtv_32fd1cc25f0ca5eae5372e60d8c8fb3a.gif') no-repeat top left;
+	height: 85px;
+	margin: 0 auto;
+	width: 84px;
+}
+
+.empty-hangout-content .empty-hangout-message {
+	color: black;
+	font-size: 18px;
+	padding-top: 24px;
+	width: 100%;
+	display: block;
+}
+
+.app-outer-wrapper, .main-video-feed {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	height: 100%;
+	width: 100%;
+}
+
+iframe.hangout-app {
+	border: none;
+	display: block;
+	height: 100%;
+	min-height: 460px;
+	min-width: 700px;
+	width: 100%;
+}
+
+.bottom-pane {
+	background-color: #ffffff;
+	border-top: 1px solid #CCC;
+	bottom: 0;
+	height: 160px;
+	margin-top: -160px;
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+	z-index: 4;
+}
+
+.bottom-pane .tab-titles {
+	background-color: #E5E5E5;
+	border-right: #CCC 1px solid;
+	display: inline-block;
+	height: 100%;
+	padding-left: 4px;
+	padding-top: 8px;
+	vertical-align: top;
+	white-space: nowrap;
+}
+
+.bottom-pane .tab-titles ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 88px;
+}
+
+.bottom-pane .tab-titles li {
+	color: #777;
+	display: block;
+	font-weight: bold;
+	margin: 0 0 4px 1px;
+	padding: 8px 20px;
+	position: relative;
+	text-decoration: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+.bottom-pane .tab-titles li:hover {
+	background-color: white;
+	color: #444;
+}
+
+.bottom-pane .tab-titles li.is-selected {
+	background-color: white;
+	border: 1px solid #CCC;
+	border-right: none;
+	color: #444;
+	left: 1px;
+}
+
+.bottom-pane .tab-titles .tab-title {
+
+}
+
+.bottom-pane .tab-content {
+	background-color: white;
+	display: inline-block;
+}
+
+.bottom-pane .tab-content .tab {
+
+}
+
+.bottom-pane .tab-content .tab ul {
+
+}
+
+body::-webkit-scrollbar {
+	height: 16px;
+	overflow: auto;
+	width: 16px;
+}
+
+body::-webkit-scrollbar-thumb {
+	border-width: 1px 1px 1px 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, .2);
+	background-clip: padding-box;
+	border: solid transparent;
+	border-width: 1px 1px 1px 6px;
+	min-height: 28px;
+	padding: 100px 0 0;
+	box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1),inset 0 -1px 0 rgba(0, 0, 0, .07);
+}
+
+body::-webkit-scrollbar-button {
+	height: 0;
+	width: 0;
+}
+
+body::-webkit-scrollbar-track {
+	background-clip: padding-box;
+	border: solid transparent;
+	border-width: 0 0 0 4px;
+}
+
+body::-webkit-scrollbar-track-piece {
+	background-clip: padding-box;
+	background-color: whiteSmoke;
+	border: solid white;
+	border-width: 0 0 0 3px;
+	box-shadow: inset 1px 0 0 rgba(0, 0, 0, .14),inset -1px 0 0 rgba(0, 0, 0, .07);
+}
+
+body::-webkit-scrollbar-corner {
+	background-clip: padding-box;
+	background-color: whiteSmoke;
+	border: solid white;
+	border-width: 3px 0 0 3px;
+	box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .14);
+}
+
+body::-webkit-scrollbar-corner {
+	background: transparent;
+}

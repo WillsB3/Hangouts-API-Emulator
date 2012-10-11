@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Google Hangout App</title>
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
+		<script>
+			{% if debug %}
+				<script src="{{ STATIC_URL }}js/libs/hangup_client.js"></script>
+			{% else %}
+				<!-- For devloper sandbox use this script -->
+				<script src="//hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.1"></script>
+
+				<!-- For a release deploy switch to this script
+				<script src="//talkgadget.google.com/hangouts/_/api/hangout.js?v=1.1"></script>
+				-->
+			{% endif %}
+		</script>
+	</head>
+	<body>
+		<!-- Your Hangout app markup here --> {{ settings.DEBUG }}
+	</body>
+</html>

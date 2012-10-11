@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<title>Google+ Hangouts</title>
-		<link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="/static/css/hangup.css" />
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/hangup.css" />
 
 		<!-- JS in the Head - :O -->
 		<!-- No really, we need this stuff as early as possible since the hangout client code
@@ -15,15 +15,15 @@
 		<!--  -->
 		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="/static/js/libs/jquery-1.7.2.js"><\/script>')</script>
+		<script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery-1.7.2.js"><\/script>')</script>
 
-		<script src="/static/js/libs/underscore.min.js"></script>
-		<script src="/static/js/libs/hangup_host.js"></script>
+		<script src="{{ STATIC_URL }}js/libs/underscore.min.js"></script>
+		<script src="{{ STATIC_URL }}js/libs/hangup_host.js"></script>
 		<script>
 			window.gapi = new gapi({
 				appId: '77337084071',
 				eventDebugMode: true,
-				staticUrl: '/static/'
+				staticUrl: '{{ STATIC_URL }}'
 			});
 		</script>
 	</head>
@@ -38,7 +38,7 @@
 					<div class="divider"></div>
 					<a class="button">Screenshare</a>
 					<div class="divider"></div>
-					<a class="button button-with-icon button-hangout-app"><img class="app-icon app-icon-16" src="/static/img/hangout_icons_16.png">Google Art Project</a>
+					<a class="button button-with-icon button-hangout-app"><img class="app-icon app-icon-16" src="{{ STATIC_URL }}img/hangout_icons_16.png">Hangout App Name</a>
 					<div class="divider"></div>
 					<a class="button">+ Add app</a>
 				</div>

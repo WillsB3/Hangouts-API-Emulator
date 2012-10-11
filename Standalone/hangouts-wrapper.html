@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Google+ Hangouts</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/hangup.css" />
+
+		<!-- JS in the Head - :O -->
+		<!-- No really, we need this stuff as early as possible since the hangout client code
+			 needs the API to exist when then iFrame is created. We could get around this by
+			 implementing a barebones gapi object just with support for .onApiReady but this
+			 would meant duplicating code and polluting the js in hangup_client which
+			 I'd prefer not to do. jQuery and underscore.js are depencies of hangup.js
+		-->
+		<!--  -->
+		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/static/js/libs/jquery-1.7.2.js"><\/script>')</script>
+
+		<script src="/static/js/libs/underscore.min.js"></script>
+		<script src="/static/js/libs/hangup_host.js"></script>
+		<script>
+			window.gapi = new gapi({
+				appId: '77337084071',
+				eventDebugMode: true,
+				staticUrl: '/static/'
+			});
+		</script>
+	</head>
+	<body class="hangout">
+		<div class="hangout-wrapper">
+			<div class="hangout-chrome">
+				<header>
+					<span class="logo"></span><span class="developer-label">Hangup.js Google Hangout Emulator - This is not a real hangout!</span>Hangouts
+				</header>
+				<div class="hangout-toolbar">
+					<a class="button">Chat</a>
+					<div class="divider"></div>
+					<a class="button">Screenshare</a>
+					<div class="divider"></div>
+					<a class="button button-with-icon button-hangout-app"><img class="app-icon app-icon-16" src="/static/img/hangout_icons_16.png">Hangout App Name</a>
+					<div class="divider"></div>
+					<a class="button">+ Add app</a>
+				</div>
+				<div class="developer-toolbar">
+					<span class="label">Manage Developed Apps:</span>
+					<a class="button button-with-icon button-reload"><span class="button-icon"></span>Reload app</a>
+					<a class="button button-with-icon button-reset"><span class="button-icon"></span>Reset app status</a>
+				</div>
+			</div>
+
+			<div class="main-content-area">
+				<div class="main-video-feed">
+					<div class="empty-hangout-content">
+						<div class="empty-hangout-animation"></div>
+						<div class="empty-hangout-message">No one has been invited to this hangout...</div>
+					</div>
+				</div>
+				<div class="app-outer-wrapper">
+					<iframe class="hangout-app" id="user-hangout-app" src="about:blank" data-qs="hl=en"></iframe>
+				</div>
+			</div>
+
+			<div class="bottom-pane">
+				<div class="tab-titles">
+					<ul>
+						<li data-tab-number="1" class="is-selected">People</li>
+						<li data-tab-number="2">Apps</li>
+					</ul>
+				</div>
+				<div class="tab-content">
+					<div class="tab tab-people">
+						<div id="participant-count"></div>
+						<ul class="participants"></ul>
+					</div>
+					<div class="tab tab-apps">
+						<ul class="apps"></ul>
+					</div>
+				</div>
+			</div>
+			<div id="hangout-message-wrapper">
+				<div id="hangout-message" class="hidden"></div>
+			</div>
+		</div>
+	</body>
+</html>
